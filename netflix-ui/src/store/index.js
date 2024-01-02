@@ -53,7 +53,7 @@ const createArrayFromRawData = (array, moviesArray, genres) => {
     async (email) => {
       const {
         data: { movies },
-      } = await axios.get(`http://localhost:5000/api/user/liked/${email}`);
+      } = await axios.get(`https://netflix-51gptaog8-akashs-projects-c96b2f8a.vercel.app/api/user/liked/${email}`);
       return movies;
     }
   );
@@ -85,7 +85,7 @@ export const removeMovieFromLiked = createAsyncThunk(
   async ({ movieId, email }) => {
     const {
       data: { movies },
-    } = await axios.put("http://localhost:5000/api/user/remove", {
+    } = await axios.put("https://netflix-51gptaog8-akashs-projects-c96b2f8a.vercel.app/api/user/remove", {
       email,
       movieId,
     });

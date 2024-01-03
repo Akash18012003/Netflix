@@ -88,7 +88,8 @@ export const removeMovieFromLiked = createAsyncThunk(
     } = await axios.put("https://netflix-ivory-mu.vercel.app/api/user/remove", {
       email,
       movieId,
-    });
+    })
+        window.location.reload();
     return movies;
   }
 );
